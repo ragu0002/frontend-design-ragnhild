@@ -1,12 +1,80 @@
 :root {
-    --color-heading: #0B0D19;
-    --color-body: #677386;
-    --color-bg-button: #3D7BFA;
-    --color-text-button: #FFF;
+  --color-heading: #0b0d19;
+  --color-body: #677386;
+  --color-bg-button: #3d7bfa;
+  --color-text-button: #fff;
 
-    /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+  /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
+  --hide-overlay: 1;
 }
 
-
 /* Begynd her... */
+
+article {
+  display: grid;
+
+  @media (width>600px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .text {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px;
+    button {
+      color: var(--color-text-button);
+      background-color: var(--color-bg-button);
+      padding: 10px;
+      border-radius: 50px;
+    }
+    h1 {
+      font-size: 2rem;
+      color: var(--color-heading);
+    }
+    p {
+      font-size: 0.9rem;
+      color: var(--color-body);
+    }
+  }
+  .img {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+
+    img {
+      border-radius: 50px;
+    }
+
+    .en {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+    }
+    .to {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 1;
+    }
+    .tre {
+      grid-column: 2 / span 1;
+      grid-row: 2 / span 2;
+    }
+    .fire {
+      grid-column: 3 / span 1;
+      grid-row: 2 / span 1;
+    }
+    .fem {
+      grid-column: 1 / span 1;
+      grid-row: 3 / span 1;
+    }
+    .seks {
+      grid-column: 3 / span 1;
+      grid-row: 3 / span 1;
+    }
+    .sju {
+      grid-column: 2 / span 1;
+      grid-row: 4 / span 1;
+    }
+  }
+}
