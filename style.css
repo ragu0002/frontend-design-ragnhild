@@ -1,16 +1,51 @@
 :root {
-    background: #E3EDFB;
+  background: #e3edfb;
 
-    --color-icon: #0B3A67;
+  --color-icon: #0b3a67;
 
-    --image-width: 8rem;
-    --card-padding: 1rem;
+  --image-width: 8rem;
+  --card-padding: 1rem;
 
-    --font-heading: 1.75rem;
+  --font-heading: 1.75rem;
 
-    /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
-    --hide-overlay: 0;
+  /* Når du synes, du er færdig, så ændr værdien herunder til '1' for at se dit resultat i browseren */
+  --hide-overlay: 1;
 }
 
-
 /* Begynd her... */
+section {
+  display: grid;
+  width: 400px;
+  gap: 2rem;
+  grid-template-columns: auto 1fr;
+  padding: var(--card-padding);
+  background-color: #e3edfb;
+
+  img {
+    width: var(--image-width);
+    border-radius: 80px;
+    align-self: center;
+    justify-self: center;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    h1 {
+      font-size: var(--font-heading);
+    }
+    p {
+      font-size: 1rem;
+      color: rgb(24, 143, 95);
+    }
+    .icons {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--color-icon);
+      svg {
+        width: 30px;
+      }
+    }
+  }
+}
