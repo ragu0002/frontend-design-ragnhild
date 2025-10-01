@@ -1,4 +1,26 @@
+/*article {
+  max-width: 65ch;
+  margin-inline: auto;
+}
+*/
+
 article {
-    max-width: 65ch;
-    margin-inline: auto;
+  --gap: clamp(1rem, 6vw, 3rem);
+  --full-cover: minmax(var(--gap), 1fr);
+  /*sier at normal skal være 5 rem bredere en 40 rem*/
+  --normal: minmax(0, 5rem);
+  /*forteller at midtdelen er 40rem bred*/
+  --a-little-extra: minmax(0, 40rem);
+
+  display: grid;
+  grid-template-columns: [screen-start]var(--full-cover) [normal-start]var(--normal) [extra-start]var(--a-little-extra) [extra-end]var(--normal) [normal-end]var(--full-cover) [screen-end];
+  > * {
+    grid-column: extra;
+  }
+  img {
+    grid-column: screen;
+  }
+  blockquote {
+    grid-column: normal;
+  }
 }
