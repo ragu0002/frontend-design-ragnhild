@@ -27,8 +27,7 @@ section {
   figure {
     grid-column: 1 / span 3;
     display: grid;
-    grid-template-columns: subgrid;
-    grid-template-rows: subgrid;
+    grid: subgrid/ subgrid;
     grid-row: 1 / span 2;
 
     img {
@@ -53,5 +52,13 @@ section {
     color: var(--gray-900);
     background: var(--gray-100);
     padding: 0.4rlh 0.6rlh;
+  }
+  @media (width<600px) {
+    grid: revert;
+    figure,
+    .content {
+      display: revert;
+      grid-area: revert;
+    }
   }
 }
