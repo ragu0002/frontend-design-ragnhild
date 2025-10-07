@@ -36,7 +36,19 @@ import { cardContent } from "../data/card-content.js";
 <style>
   main {
     padding-block: 4rem; /* Kun af æstetiske årsager */
+    scroll-snap-type: x mandatory;
   }
   section {
+    display: grid;
+    grid-template-columns: 1fr minmax(0, var(--content-width)) 1fr;
+    >*{
+      grid-column: 2;
+    }
+    .full-width{
+       grid-column: 1/ -1;
+        padding-inline:
+    max(1rem, 50% - var(--content-width)/ 2);
+ 
+    }
   }
 </style>
